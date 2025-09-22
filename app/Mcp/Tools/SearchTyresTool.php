@@ -10,6 +10,7 @@ use App\Mcp\Services\TyreApi;
 
 class SearchTyresTool extends Tool
 {
+    protected string $name = 'search-tyres';
     protected string $description = 'Pretraga guma (size, season, vehicle_type, in_stock, proizvođač, cena, paginacija).';
 
     public function __construct(protected TyreApi $api) {}
