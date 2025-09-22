@@ -33,23 +33,4 @@ class TyreApi
         return Http::get($this->base . '/tyres/' . $id)
             ->json();
     }
-
-    // Partners i dalje može da ide na tvoju drugu rutu (ako postoji)
-    public function partners(array $filters): array
-    {
-        return Http::get($this->base . '/partners', $filters)
-            ->json();
-    }
-
-    public function addToCart(array $payload): array
-    {
-        return Http::post($this->base . '/cart/items', $payload)
-            ->json();
-    }
-
-    public function createOrder(array $payload): array
-    {
-        return Http::post($this->base . '/orders', $payload)
-            ->json();
-    }
 }

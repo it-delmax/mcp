@@ -16,9 +16,6 @@ class BuyingGuidelinesResource extends Resource
 # TyreStore Buying Guidelines
 - Always normalize size and confirm LI/SI if present.
 - Prefer in-stock; if out-of-stock, show ETA.
-- Offer 2–3 partner locations within 25km of user's city/postcode.
-- Cart is idempotent per `cart_id`.
-- Create order only after explicit user confirmation.
 MD);
     }
 }
