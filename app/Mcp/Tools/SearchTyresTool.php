@@ -25,10 +25,8 @@ class SearchTyresTool extends Tool
             'season'        => $schema->string()->description('npr. "zimska", "letnja", "all season"'),
             'vehicle_type'  => $schema->string()->description('npr. "Putničko", "SUV", "Kombi"'),
             'manufacturer'  => $schema->string(),
-            'in_stock'      => $schema->boolean()->default(false)->description('true = samo artikli sa lagerom'),
-            'price_min'     => $schema->number(),
-            'price_max'     => $schema->number(),
-            'sort'          => $schema->string()->description('polje za sortiranje, npr. "price_with_tax" ili "-price_with_tax"'),
+            'in_stock'      => $schema->integer()->default(1)->description('1 = samo artikli sa lagerom'),
+            'sort'          => $schema->string()->description('polje za sortiranje, npr. "PRICE_WITH_TAX" ili "-PRICE_WITH_TAX"'),
             'per_page'      => $schema->integer()->default(20)->min(1)->max(100),
             'cursor'        => $schema->string()->description('cursor za sledeću stranu (ako koristiš cursor paginaciju)'),
         ];
