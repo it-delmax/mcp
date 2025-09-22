@@ -25,7 +25,7 @@ class SearchTyresTool extends Tool
             'season'        => $schema->string()->description('npr. "zimska", "letnja", "all season"'),
             'vehicle_type'  => $schema->string()->description('npr. "Putničko", "SUV", "Kombi"'),
             'manufacturer'  => $schema->string(),
-            'in_stock'      => $schema->integer()->default(1)->description('1 = samo artikli sa lagerom'),
+            'on_stock'      => $schema->integer()->default(1)->description('1 = samo artikli sa lagerom'),
             'sort'          => $schema->string()->description('polje za sortiranje, npr. "PRICE_WITH_TAX" ili "-PRICE_WITH_TAX"'),
             'per_page'      => $schema->integer()->default(20)->min(1)->max(100),
             'cursor'        => $schema->string()->description('cursor za sledeću stranu (ako koristiš cursor paginaciju)'),
@@ -43,7 +43,7 @@ class SearchTyresTool extends Tool
             'season'        => 'nullable|string|max:20',
             'vehicle_type'  => 'nullable|string|max:30',
             'manufacturer'  => 'nullable|string|max:50',
-            'in_stock'      => 'nullable|integer|in:0,1',
+            'on_stock'      => 'nullable|integer|in:0,1',
             'price_min'     => 'nullable|numeric|min:0',
             'price_max'     => 'nullable|numeric|min:0',
             'sort'          => 'nullable|string|max:50',
@@ -74,8 +74,8 @@ class SearchTyresTool extends Tool
             $q['filter[manufacturer]'] = trim($validated['manufacturer']);
         }
 
-        if (array_key_exists('in_stock', $validated)) {
-            $q['filter[in_stock]'] = $validated['in_stock'];
+        if (array_key_exists('on_stock', $validated)) {
+            $q['filter[on_stock]'] = $validated['on_stock'];
         }
 
         // cena
