@@ -43,7 +43,7 @@ class SearchTyresTool extends Tool
             'season'        => 'nullable|string|max:20',
             'vehicle_type'  => 'nullable|string|max:30',
             'manufacturer'  => 'nullable|string|max:50',
-            'in_stock' => 'nullable|integer|in:0,1',
+            'in_stock'      => 'nullable|integer|in:0,1',
             'price_min'     => 'nullable|numeric|min:0',
             'price_max'     => 'nullable|numeric|min:0',
             'sort'          => 'nullable|string|max:50',
