@@ -10,6 +10,7 @@ use Laravel\Mcp\Server\Tools\Annotations\IsReadOnly;
 
 class GetTyreDetailsTool extends Tool
 {
+
     protected string $description = 'Get full tyre details by SKU/ID (label, noise, load/speed, warranty).';
 
     public function __construct(protected \App\Mcp\Services\TyreApi $api) {}

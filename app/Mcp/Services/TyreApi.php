@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 class TyreApi
 {
     public function __construct(
-        protected string $base = '', // prilagodi
+        protected string $base = '' // prilagodi
     ) {
         if (empty($this->base)) {
             $this->base = config('mcp.api.url');
@@ -21,9 +21,8 @@ class TyreApi
 
     public function search(array $q): array
     {
-        // /api/tyres?filter[size]=195/55R16&filter[SEASON]=winter
+        // /api/tyres?filter[size]=195/55R16&filter[season]=winter
         $url = $this->base . '/tyres';
-        Log::info('TyreApi search', ['url' => $url, 'q' => $q]);
         return Http::get($url, $q)
             ->json();
     }
